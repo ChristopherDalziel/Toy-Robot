@@ -1,20 +1,25 @@
 module ToyRobot
   class Robot
     # This allows us to remove the position method below, it does the exact same thing, allows us to read the property.
-    attr_reader :position
+    attr_reader :east, :north
 
-    def initialize(position = 0)
-      @position = position
+    def initialize(east = 0, north = 0)
+      @east = east
+      @north = north
     end
 
     def move_east
-      # Each time move_east is called move the position 1 to the right
-      @position += 1
+      # Each time we move_east we move the Robot 1 space to the left
+      @east += 1
     end
 
     def move_west
-      # Eat time move_west is called move the position 1 to the left
-      @position -= 1
+      # Each time we move_west we move the Robot 1 space to the right
+      @east -= 1
+    end
+
+    def move_north
+      @north += 1
     end
 
     # def position
