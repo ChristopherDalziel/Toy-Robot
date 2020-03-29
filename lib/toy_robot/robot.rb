@@ -22,6 +22,10 @@ module ToyRobot
       @north += 1
     end
 
+    def move_south
+      @north -= 1
+    end
+
     # def position
     #   # Return the value of position
     #   @position
