@@ -8,11 +8,12 @@ module ToyRobot
     end
 
     def move_east
-      # Each time move is called, add 1 to the position
+      # Each time move_east is called move the position 1 to the right
       @position += 1
     end
 
     def move_west
+      # Eat time move_west is called move the position 1 to the left
       @position -= 1
     end
 
