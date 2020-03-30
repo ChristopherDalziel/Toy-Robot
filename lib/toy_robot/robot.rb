@@ -48,9 +48,10 @@ module ToyRobot
     #   end
     # end
 
-    def turn_left
-      @direction = DIRECTIONS[DIRECTIONS.index(@direction) -1]
-    end
+    # 'This method was replaced by the private turn method a simplified version of turn_right / turn_left'
+    # def turn_left
+    #   @direction = DIRECTIONS[DIRECTIONS.index(@direction) -1]
+    # end
 
     # 'This code was replaced by the new turn_left method, that uses an array which we move through. Although the new code is harder to read, it's better to have directions which are not hard-coded'
     # def turn_left
@@ -62,9 +63,26 @@ module ToyRobot
     #   end
     # end
 
+    # 'This method was replaced by the private turn method + a simplified version of turn_right / turn_left'
+    # def turn_right
+    #   index = DIRECTIONS.index(@direction)
+    #   @direction = DIRECTIONS.rotate(1)[index]
+    # end
+
+    def turn_left
+      turn(:left)
+    end
+  
     def turn_right
+      turn(:right)
+    end
+
+    private 
+  
+    def turn(turn_direction)
       index = DIRECTIONS.index(@direction)
-      @direction = DIRECTIONS.rotate(1)[index]
+      rotations = turn_direction == :right ? 1 : -1
+      @direction = DIRECTIONS.rotate(rotations)[index]
     end
 
   end
