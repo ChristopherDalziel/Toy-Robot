@@ -1,5 +1,6 @@
 module ToyRobot
   class Robot
+    DIRECTIONS = [ "NORTH", "EAST", "SOUTH", "WEST" ]
     # This allows us to remove the position method below, it does the exact same thing, allows us to read the property.
     attr_reader :east, :north, :direction
 
@@ -48,13 +49,18 @@ module ToyRobot
     # end
 
     def turn_left
-      @direction = case @direction
-      when "NORTH" then "WEST"
-      when "SOUTH" then "EAST"
-      when "EAST" then "NORTH"
-      when "WEST" then "SOUTH"
-      end
+      @direction = DIRECTIONS[DIRECTIONS.index(@direction) -1]
     end
+
+    # 'This code was replaced by the new turn_left method, that uses an array which we move through'
+    # def turn_left
+    #   @direction = case @direction
+    #   when "NORTH" then "WEST"
+    #   when "SOUTH" then "EAST"
+    #   when "EAST" then "NORTH"
+    #   when "WEST" then "SOUTH"
+    #   end
+    # end
 
   end
 end
