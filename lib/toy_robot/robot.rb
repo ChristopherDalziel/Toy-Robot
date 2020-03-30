@@ -1,7 +1,7 @@
 module ToyRobot
   class Robot
     # This allows us to remove the position method below, it does the exact same thing, allows us to read the property.
-    attr_reader :east, :north
+    attr_reader :east, :north, :direction
 
     def initialize(east = 0, north = 0, direction = "NORTH")
       @east = east
@@ -46,6 +46,15 @@ module ToyRobot
     #   when "WEST" then move_west
     #   end
     # end
+
+    def turn_left
+      @direction = case @direction
+      when "NORTH" then "WEST"
+      when "SOUTH" then "EAST"
+      when "EAST" then "NORTH"
+      when "WEST" then "SOUTH"
+      end
+    end
 
   end
 end
