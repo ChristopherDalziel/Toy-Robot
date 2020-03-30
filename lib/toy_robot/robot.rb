@@ -9,6 +9,12 @@ module ToyRobot
       @direction = direction
     end
 
+    # 'This code was replaced by attr_reader':
+    # def position
+    #   # Return the value of position
+    #   @position
+    # end
+
     def move_east
       # Each time we move_east we move the Robot 1 space to the left
       @east += 1
@@ -28,17 +34,17 @@ module ToyRobot
     end
 
     def move
-      case @direction
-      when "NORTH" then move_north
-      when "SOUTH" then move_south
-      when "EAST" then move_east
-      when "WEST" then move_west
-      end
+      send("move_#{@direction.downcase}")
     end
 
-    # def position
-    #   # Return the value of position
-    #   @position
+    # 'This code was replaced by the new move method, this code is easier to read, however the metaprogramming version is a lot cleaner': 
+    # def move
+    #   case @direction
+    #   when "NORTH" then move_north
+    #   when "SOUTH" then move_south
+    #   when "EAST" then move_east
+    #   when "WEST" then move_west
+    #   end
     # end
 
   end
