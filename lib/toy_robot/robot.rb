@@ -52,7 +52,7 @@ module ToyRobot
       @direction = DIRECTIONS[DIRECTIONS.index(@direction) -1]
     end
 
-    # 'This code was replaced by the new turn_left method, that uses an array which we move through'
+    # 'This code was replaced by the new turn_left method, that uses an array which we move through. Although the new code is harder to read, it's better to have directions which are not hard-coded'
     # def turn_left
     #   @direction = case @direction
     #   when "NORTH" then "WEST"
@@ -61,6 +61,11 @@ module ToyRobot
     #   when "WEST" then "SOUTH"
     #   end
     # end
+
+    def turn_right
+      index = DIRECTIONS.index(@direction)
+      @direction = DIRECTIONS.rotate(1)[index]
+    end
 
   end
 end
