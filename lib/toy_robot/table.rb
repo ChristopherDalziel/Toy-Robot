@@ -7,7 +7,7 @@ module ToyRobot
 
     # Logic: 
     # Less than 0 = invalid
-    # More than or equal to c5 = invalid
+    # More than or equal to 5 = invalid
     def valid_location?(east, north)
       # This logic determines the width and length of our table
       # east >= 0 && east < @width && north >= 0 && north < @length
