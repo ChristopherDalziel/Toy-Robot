@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describ ToyRobot::CLI do
+RSpec.describe ToyRobot::CLI do
   subject { ToyRobot::CLI.new }
 
   context "load_commands" do
