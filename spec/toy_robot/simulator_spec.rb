@@ -37,8 +37,8 @@ RSpec.describe ToyRobot::Simulator do
       subject.turn_right
     end
 
-    it "tells the robot to report" do
-      expect(robot).to receive(:report)
+    it "tells the robot to report" do 
+      expect(robot).to receive(:report) { { north: 3, east: 3, direction: "NORTH" } }
       subject.report
     end
   end
