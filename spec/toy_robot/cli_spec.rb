@@ -30,4 +30,10 @@ RSpec.describe ToyRobot::CLI do
     end 
   end
 
+  context "move command" do
+    it "passes a move command to the simulator" do
+      expect(simulator).to receive(:move)
+      subject.run([:move])
+  end
+
 end
