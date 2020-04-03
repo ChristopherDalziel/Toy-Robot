@@ -9,6 +9,9 @@ module ToyRobot
     end
 
     def run(commands)
+      commands.each do |command, *args|
+        simulator.send(command, *args)
+      end
     end
 
   end
