@@ -25,8 +25,10 @@ module ToyRobot
       robot.turn_right
     end
     
+    # What does report output? 
     def report
-      robot.report
+      position = robot.report
+      puts "The robot is currently at (#{position[:north]}, #{position[:east]})" + " and it's facing #{position[:direction]}"
     end
 
   end
