@@ -19,7 +19,7 @@ RSpec.describe ToyRobot::Simulator do
   end
 
   context "when the robot has been placed" do
-    let(:robot){ instance_double(ToyRobot::Robot) }
+    let(:robot){ instance_double(ToyRobot::Robot, next_move: [0, 0]) }
     before { allow(subject).to receive(:robot).and_return(robot) }
 
     it "tells the robot to move" do
