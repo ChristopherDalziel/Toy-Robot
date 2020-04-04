@@ -6,6 +6,10 @@ module ToyRobot
       @table = table
     end
 
+    def robot_placed?
+      !robot.nil?
+    end
+
     def place(east, north, facing)
       # First check if the placement location is valid
       return unless @table.valid_location?(east, north)
@@ -14,7 +18,9 @@ module ToyRobot
     end
 
     def move
+      return unless robot_placed?
       return unless @table.valid_location?(*robot.next_move)
+      
       robot.move
     end
 
