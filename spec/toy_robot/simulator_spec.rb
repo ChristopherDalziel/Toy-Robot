@@ -81,4 +81,9 @@ RSpec.describe ToyRobot::Simulator do
     expect { subject.turn_right }.to_not raise_error
   end
 
+  it "informs us when a command is invalid" do
+    message = "'PLACE 1, 2, NORTH' is an invalid command\n"
+    expect { subject.invalid("PLACE 1, 2, NORTH") }.to output(message).to_stdout
+  end
+
 end

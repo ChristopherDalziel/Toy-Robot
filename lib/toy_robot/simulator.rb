@@ -39,9 +39,13 @@ module ToyRobot
     # What does report output? 
     def report
       return unless robot_placed?
-      
+
       position = robot.report
       puts "The robot is currently at (#{position[:north]}, #{position[:east]})" + " and it's facing #{position[:direction]}"
+    end
+
+    def invalid(command)
+      puts "'#{command.strip}' is an invalid command"
     end
 
   end
