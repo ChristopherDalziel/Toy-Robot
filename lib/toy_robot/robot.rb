@@ -85,6 +85,15 @@ module ToyRobot
       }
     end
 
+    def next_move
+      case @direction
+      when "NORTH"
+        [@east, @north + 1]
+      when "SOUTH"
+        [@east, @north - 1]
+      end
+    end
+
     private 
   
     def turn(turn_direction)
