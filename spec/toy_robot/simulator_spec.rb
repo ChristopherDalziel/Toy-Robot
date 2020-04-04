@@ -69,4 +69,16 @@ RSpec.describe ToyRobot::Simulator do
     end
   end
 
+  it "turning an unplaced robot left does not cause an exception" do 
+    expect { subject.turn_left }.to_not raise_error
+  end
+
+  it "turning an unplaced robot right does not cause an exception" do 
+    expect { subject.turn_right }.to_not raise_error
+  end
+
+  it "asking an unplaced robot to report does not cause an exception" do 
+    expect { subject.turn_right }.to_not raise_error
+  end
+
 end
