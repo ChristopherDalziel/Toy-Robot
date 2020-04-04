@@ -44,14 +44,14 @@ RSpec.describe ToyRobot::Simulator do
     end
   end
 
-  context "robot placed at table boundry" do
+  context "robot placed at table boundary" do
     before do
       subject.place(0, 4, "NORTH")
     end
 
-    it "cannot move past the table boundry" do
+    it "cannot move past the table boundary" do
       subject.move
-      message = "The robot is currently at (0, 4) and it's facing NORTH\n"
+      message = "The robot is currently at (4, 0) and it's facing NORTH\n"
       expect { subject.report }.to output(message).to_stdout
     end
   end
