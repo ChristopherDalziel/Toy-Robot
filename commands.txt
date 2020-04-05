@@ -1,6 +1,5 @@
-place 1,2,NORTH
-Place 1,2,NORTH
-PlAcE 1,2,NORTH
-MoVe
-RePort
-InvaliD CommandS
+PLACE 0,0,NORTH
+MOVE
+MOVE
+MOVE
+REPORT

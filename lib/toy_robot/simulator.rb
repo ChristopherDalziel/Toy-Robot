@@ -41,7 +41,7 @@ module ToyRobot
       return unless robot_placed?
 
       position = robot.report
-      puts "The robot is currently at (#{position[:north]}, #{position[:east]})" + " and it's facing #{position[:direction]}"
+      puts "The robot is currently at (#{position[:east]}, #{position[:north]})" + " and it's facing #{position[:direction]}"
     end
 
     def invalid(command)

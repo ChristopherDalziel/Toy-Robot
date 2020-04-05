@@ -64,7 +64,7 @@ RSpec.describe ToyRobot::Simulator do
 
     it "cannot move past the table boundary" do
       subject.move
-      message = "The robot is currently at (4, 0) and it's facing NORTH\n"
+      message = "The robot is currently at (0, 4) and it's facing NORTH\n"
       expect { subject.report }.to output(message).to_stdout
     end
   end
